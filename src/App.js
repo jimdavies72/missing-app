@@ -14,9 +14,13 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <Routes>
-        <Route path="/" element={<Test />} />
-      </Routes>
+      <header>{/* <Navbar/> */}</header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Test />} />
+        </Routes>
+      </main>
+      <footer>{/* <Footer/> */}</footer>
     </div>
   );
 };
