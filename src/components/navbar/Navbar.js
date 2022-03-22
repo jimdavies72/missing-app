@@ -1,10 +1,10 @@
 import "./Navbar.css";
-import logo from "../media/logo.png";
+import logo from "../../media/logo-1.png";
 
 const Navbar = () => {
   return (
-       <nav>
-         <img className="logo" src={logo} alt=""></img>
+       <nav className="container">
+         <img id="logo" src={logo} alt=""></img>
          <ul className="nav_links">
            <li><a href="#">Home</a></li>
            <li><a href="#">Profile</a></li>

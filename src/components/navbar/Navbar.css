@@ -9,12 +9,16 @@ nav {
     /* pushing left and right items to far edges = justify-content: flex-end;  */
     justify-content: flex-end; 
     align-items: center;
-    padding: 30px 10%;
+    padding: 5px 0px;
+    position: sticky;
+    overflow: hidden;
 }
 
-.logo {
+#logo {
     cursor: pointer;
     margin-right: auto;
+    height: 80px;
+    width: 120px;
 }
 
 .nav_links {
@@ -28,6 +32,7 @@ nav {
 
 .nav_links li a {
     transition: all 0.3s ease 0s;
+    color: black;
 }
 
 .nav_links li a:hover {

@@ -28,10 +28,10 @@ const App = () => {
           <Route path="/home" element={<Home setUser={setUser} />} />
           <Route path="/create-missing-person" element={<CreateMissing />} />
         </Routes>
-        <footer>
-          <Footer />
-        </footer>
       </main>
+      <footer>
+          <Footer />
+      </footer>
     </div>
   );
 };
