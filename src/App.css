@@ -2,24 +2,7 @@
 -----
 Fonts
 -----
-font-family: 'Roboto', sans-serif;
-font-family: 'Abel', sans-serif;
-font-family: 'Montserrat', sans-serif;
-font-family: 'Nunito Sans', sans-serif;
-font-family: 'Nunito Sans', sans-serif;
-font-family: 'MEOWZA', sans-serif;
-font-family: 'Quicksand', sans-serif;
-font-family: 'Oleo Script Swash Caps', cursive;
 
-*/
-
-@import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:ital@1&family=Nunito+Sans&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 /* 
 -------
@@ -27,7 +10,7 @@ globals
 -------
 */
 
-html {
+/* html {
   box-sizing: border-box;
 }
 
@@ -39,17 +22,17 @@ html {
   box-sizing: inherit;
 }
 
-:root {
+:root { */
   /* fonts */
 
-  --ff-logo: "Oleo Script Swash Caps", sans-serif;
+  /* --ff-logo: "Oleo Script Swash Caps", sans-serif;
   --ff-heading: "Quicksand", sans-serif;
   --ff-sub-heading: "Abel", sans-serif;
-  --ff-para: "Nunito Sans", sans-serif;
+  --ff-para: "Nunito Sans", sans-serif; */
 
   /* colour palette */
 
-  --col-white: white;
+  /* --col-white: white;
   --col-off-white: #faf9f6;
   --col-black: black;
   --col-green: green;
@@ -62,23 +45,23 @@ html {
   --col-med-blue: mediumblue;
   --col-orange-red: orangered;
   --col-med-orange: orange;
-  --col-light-seashell: #fff2eb;
+  --col-light-seashell: #fff2eb; */
 
   /* shading */
 
-  --light-shadow: 4px 5px 5px 0px rgba(0, 0, 0, 0.51);
+  /* --light-shadow: 4px 5px 5px 0px rgba(0, 0, 0, 0.51);
   --dark-shadow: 22px 22px 15px -10px rgba(0, 0, 0, 0.66);
   --inset-shadow: 4px 5px 6px -2px rgba(0, 0, 0, 0.75) inset;
   --top-shadow: -2px -8px 17px -7px rgba(0, 0, 0, 0.4);
-  --text-shadow: 2px 2px 1px rgba(255, 255, 255, 1);
+  --text-shadow: 2px 2px 1px rgba(255, 255, 255, 1); */
 
   /* transitions */
 
-  --transition-slow: 1s;
+  /* --transition-slow: 1s;
   --transition-med: 0.75s;
   --transition-fast: 0.5s;
-  --transition-vfast: 0.25s;
-}
+  --transition-vfast: 0.25s; */
+/* }
 
 body {
   background-color: var(--col-off-white);
@@ -128,4 +111,4 @@ button:hover {
   background-color: var(--col-white);
   box-shadow: var(--light-shadow);
   border-radius: 5px;
-}
+} */
