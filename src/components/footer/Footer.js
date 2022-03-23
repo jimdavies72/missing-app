@@ -8,13 +8,11 @@ const Footer = () => {
       <div className="row">
         <div className="git">
           <h2>Creators</h2>
-          <ul className="list">
-            <li><a href="https://github.com/CatTiac">Cait J</a></li>
-            <li><a href="https://github.com/jimdavies72">James D</a></li>
-            <li><a href="https://github.com/clarkenewsh">Clarke N</a></li>
-            <li><a href="https://github.com/EethanF">Ethan F</a></li>
-            <li><a href="https://github.com/ConnahShackley">Connah S</a></li>
-          </ul>
+            <a href="https://github.com/CatTiac">Cait J</a>
+            <a href="https://github.com/jimdavies72">James D</a>
+            <a href="https://github.com/clarkenewsh">Clarke N</a>
+            <a href="https://github.com/EethanF">Ethan F</a>
+            <a href="https://github.com/ConnahShackley">Connah S</a>
         </div>
         <div className="aboutUs">
           <h2>About Us</h2>
