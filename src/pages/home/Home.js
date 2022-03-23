@@ -1,5 +1,5 @@
-import MissingPersonList from "../../components/missingPersonList/MissingPersonList";
-import { SearchBar } from "../../components/searchBar";
+import MissingPersonList from "../../components/missingPersonList/MissingPersonList.js";
+import SearchBar from "../../components/searchBar/SearchBar.js"
 import "./Home.css";
 
 const Home = () => {
