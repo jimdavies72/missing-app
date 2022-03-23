@@ -53,14 +53,14 @@ input,
   cursor: pointer;
 }
 
-button {
+/* button {
   padding: 7px 10px;
   background-color: slateblue;
   color: var(--col-white);
   font-weight: bold;
   border: 0;
   border-radius: 5px;
-}
+} */
 
 .action-success {
   margin-top: 10px;

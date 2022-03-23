@@ -1,10 +1,15 @@
 import "./MissingPersonList.css";
+import MissingPersonCard from "../missingPersonCard/MissingPersonCard.js";
 
-const MissingPersonList = () => {
+const MissingPersonList = ({ missingPersons }) => {
   return (
-    <>
-      <h1>MissingPersonList Component</h1>
-    </>
+    <div>
+      <section className="person-list">
+        {missingPersons.map((person, index) => {
+          return <MissingPersonCard key={index} person={person} />
+        })}
+      </section>
+    </div>
   );
 };
 

@@ -1,10 +1,14 @@
 import "./MissingPersonCard.css";
 
-const MissingPersonCard = () => {
+const MissingPersonCard = ({ person }) => {
   return (
-    <>
-      <h1>MissingPersonCard Component</h1>
-    </>
+    <div className="person-card">
+      <h3>{person.name}</h3>
+      <p>Age: {person.age}</p>
+      <p>{person.missingSince}</p>
+      <p>{person.missingFrom}</p>
+      <button className="button-alt">Mark as found</button>
+    </div>
   );
 };
 
