@@ -1,14 +1,16 @@
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 import logo from "../../media/logo-1.png";
 
-const Navbar = () => {
+const Navbar = ({ user, clearUserHandler }) => {
   return (
        <nav className="container">
          <img id="logo" src={logo} alt=""></img>
          <ul className="nav_links">
-           <li><a href="#">Home</a></li>
-           <li><a href="#">Profile</a></li>
-           <button className="button-main">Logout</button>
+           {user && <li><Link to='/home'>Home</Link></li>}
+           {user && <li><Link to='/profile'>Profile</Link></li>}
+           {user && <li><p>Logged In: {user}</p></li>}
+           {user && <button className="button-main" onClick={ clearUserHandler }>Logout</button>}
          </ul>
        </nav>
   );
