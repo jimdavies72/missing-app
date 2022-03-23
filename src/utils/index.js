@@ -54,3 +54,27 @@ export const tokenLogin = async (setUser) => {
     console.log(error);
   }
 };
+
+//create missing person
+export const createMissingPerson = async (name, userId, publicVisible, picURL, missingSince, missingFrom, ageAtDisappearance, creationDate,) => {
+  try {
+    const response = await fetch(`${process.env.REACT_APP_REST_API}MP`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name,
+        userId: userId,
+        publicVisible: publicVisible,
+        picURL: picURL,
+        missingSince: missingSince,
+        missingFrom: missingFrom,
+        ageAtDisappearance: ageAtDisappearance,
+        creationDate: creationDate,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
