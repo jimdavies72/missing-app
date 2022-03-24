@@ -19,7 +19,7 @@ const CreateMissing = ({ user }) => {
 
   return (
     <>
-      {!user && <Navigate to="/" />}
+      {/* {!user && <Navigate to="/" />} */}
       <h1>Register Missing Person</h1>
       <form onSubmit={handleSubmit} className="RegisterMPform">
           <input
