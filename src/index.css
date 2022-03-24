@@ -84,8 +84,10 @@ header {
 footer {
   background: #247ba0;
   color: #ffffff;
-  position: sticky;
+  position: fixed;
+  bottom: 0;
   padding: 20px 0px;
+  width: 100%;
 
 }
 
