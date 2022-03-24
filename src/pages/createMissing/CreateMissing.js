@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import "./CreateMissing.css";
 
-const CreateMissing = (user) => {
+const CreateMissing = ({ user }) => {
   const [input, setInput] = useState({});
 
   const handleChange = (e) => {
