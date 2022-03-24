@@ -10,6 +10,7 @@ import Footer from "./components/footer/Footer.js";
 const App = () => {
   const [user, setUser] = useState();
   const [isCreate, setIsCreate] = useState(true);
+  const [missingPerson, setMissingPerson] = useState();
 
   const clearUserHandler = () => {
     setUser(null);
@@ -30,7 +31,7 @@ const App = () => {
           />
           <Route
             path="/register"
-            element={<CreateMissing user={user} isCreate={isCreate} />}
+            element={<CreateMissing user={user} isCreate={isCreate} setMissingPerson={setMissingPerson} missingPerson={missingPerson} />}
           />
         </Routes>
       </main>
