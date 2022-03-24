@@ -33,9 +33,9 @@ body {
   color: black;
 }
 
-main {
+/* main {
   height: 90vh;
-}
+} */
 
 .container {
   max-width: 80em;
@@ -83,8 +83,10 @@ header {
 
 footer {
   background: #247ba0;
-  height: 100px;
   color: #ffffff;
+  position: sticky;
+  padding: 20px 0px;
+
 }
 
 

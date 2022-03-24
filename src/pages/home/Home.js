@@ -1,55 +1,12 @@
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+// import { useEffect } from "react";
+// import { listMissingPeople } from "../../utils/index.js";
 import MissingPersonList from "../../components/missingPersonList/MissingPersonList.js";
 import SearchBar from "../../components/searchBar/SearchBar.js";
 import "./Home.css";
-import { useState } from "react";
+
 
 const Home = ({ user }) => {
-  // Dummy missing person data until the fetch request is implemented
-  const [missingPersons, setMissingPersons] = useState([
-    {
-      id: 1,
-      name: "john",
-      age: "30",
-      missingSince: "30/01/2022",
-      missingFrom: "London",
-    },
-    {
-      id: 2,
-      name: "Emily",
-      age: "33",
-      missingSince: "29/01/2022",
-      missingFrom: "Manchester",
-    },
-    {
-      id: 3,
-      name: "Dave",
-      age: "40",
-      missingSince: "30/01/2022",
-      missingFrom: "Liverpool",
-    },
-    {
-      id: 4,
-      name: "john",
-      age: "30",
-      missingSince: "30/01/2022",
-      missingFrom: "London",
-    },
-    {
-      id: 5,
-      name: "Emily",
-      age: "33",
-      missingSince: "29/01/2022",
-      missingFrom: "Manchester",
-    },
-    {
-      id: 6,
-      name: "Dave",
-      age: "40",
-      missingSince: "30/01/2022",
-      missingFrom: "Liverpool",
-    },
-  ]);
 
   return (
     <>
@@ -58,10 +15,10 @@ const Home = ({ user }) => {
         <section className="SearchContainer">
           <SearchBar />
           <button className="button-main">My Missing Person</button>
-          <button className="button-main">Register Missing Person</button>
+          <Link to="/register"><button className="button-main">Register Missing Person</button></Link>
         </section>
         <h1>All Missing People</h1>
-        <MissingPersonList missingPersons={missingPersons} />
+        <MissingPersonList user={user} />
       </section>
     </>
   );

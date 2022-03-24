@@ -1,63 +1,65 @@
 import React from "react";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import { createMissingPerson } from "../../utils";
 import "./CreateMissing.css";
 
-const CreateMissing = ({ user }) => {
-  const [input, setInput] = useState({});
-
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setInput((values) => ({ ...values, [name]: value }));
-  };
+const CreateMissing = ({ user, missingPerson, setMissingPerson }) => {
+  const [name, setName] = useState();
+  const [ageAtDisappearance, setAgeAtDisappearance] = useState();
+  const [userId, setUserId] = useState(user);
+  const [publicVisible, setPublicVisible] = useState(true);
+  const [picUrl, setPicUrl] = useState();
+  const [missingSince, setMissingSince] = useState();
+  const [missingFrom, setMissingFrom] = useState();
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(input);
+    createMissingPerson(name, userId, ageAtDisappearance, picUrl, missingSince, missingFrom, setMissingPerson);
   };
 
   return (
     <>
       {/* {!user && <Navigate to="/" />} */}
       <h1>Register Missing Person</h1>
-      <form onSubmit={handleSubmit} className="RegisterMPform">
+      <form onSubmit={handleSubmit} className="missing-person-form">
           <input
             type="text"
             name="name"
             placeholder="Missing person's name"
-            value={input.name || ""}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           <input
             type="number"
             name="age"
             placeholder="Missing person's age"
-            value={input.age || ""}
-            onChange={handleChange}
+            value={ageAtDisappearance}
+            onChange={(e) => setAgeAtDisappearance(e.target.value)}
           />
           <input
             type="text"
             name="picURL"
             placeholder="Enter image url"
-            value={input.picURL || ""}
-            onChange={handleChange}
+            value={picUrl}
+            onChange={(e) => setPicUrl(e.target.value)}
           />
           <input
             type="date"
             name="missingSince"
             placeholder="Missing since date"
-            value={input.missingSince || ""}
-            onChange={handleChange}
+            value={missingSince}
+            onChange={(e) => setMissingSince(e.target.value)}
           />
           <input
             type="text"
             name="missingFrom"
             placeholder="Area missing from"
-            value={input.missingFrom || ""}
-            onChange={handleChange}
+            value={missingFrom}
+            onChange={(e) => setMissingFrom(e.target.value)}
           />
-        <input type="Submit" />
+        <button className="button-main" type="Submit">Submit</button>
       </form>
     </>
   );
