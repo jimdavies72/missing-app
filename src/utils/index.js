@@ -54,3 +54,49 @@ export const tokenLogin = async (setUser) => {
     console.log(error);
   }
 };
+
+//create missing person
+export const createMissingPerson = async (name, userId, publicVisible, picURL, missingSince, missingFrom, ageAtDisappearance, setMissingPerson) => {
+  try {
+    console.log("did it get here");
+    const response = await fetch(`${process.env.REACT_APP_REST_API}missing`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name,
+        ageAtDisappearance: ageAtDisappearance,
+        picURL: picURL,
+        userId: userId,
+        missingSince: missingSince,
+        // publicVisible: publicVisible,
+        missingFrom: missingFrom,
+      }),
+    });
+    console.log("response data", response);
+    const data = await response.json();
+    console.log("missing data", data);
+    setMissingPerson(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// List all missing people
+export const listMissingPeople = async (filterKey, filterVal, setMissingPersons) => {
+  try {
+    const response = await fetch(`${process.env.REACT_APP_REST_API}missing/filtered`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        filterKey: filterKey,
+        filterVal: filterVal,
+      }),
+    });
+
+    const data = await response.json();
+    console.log("filtered missing people", data);
+    setMissingPersons(data);
+  } catch (error) {
+    console.log(error)
+  }
+};
