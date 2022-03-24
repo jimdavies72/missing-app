@@ -41,7 +41,7 @@ const Login = ({ user, setUser }) => {
       endpoint = "user";
     } else {
       setActionSuccess("Required fields are missing");
-      // return;
+      return;
     }
 
     const data = await fetchRequest(endpoint, payload, "POST");
@@ -51,9 +51,6 @@ const Login = ({ user, setUser }) => {
     } else {
       setActionSuccess("Success");
       await setUser(data.user);
-      console.log("returned user: ", data.user);
-      console.log("token: ", data.token);
-      console.log("user:", user);
       localStorage.setItem("myToken", data.token);
     }
   };
