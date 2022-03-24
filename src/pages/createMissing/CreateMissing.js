@@ -22,51 +22,41 @@ const CreateMissing = ({ user }) => {
       {!user && <Navigate to="/" />}
       <h1>Register Missing Person</h1>
       <form onSubmit={handleSubmit} className="RegisterMPform">
-        <label>
-          Missing person's name:
           <input
             type="text"
             name="name"
+            placeholder="Missing person's name"
             value={input.name || ""}
             onChange={handleChange}
           />
-        </label>
-        <label>
-          Missing person's age:
           <input
             type="number"
             name="age"
+            placeholder="Missing person's age"
             value={input.age || ""}
             onChange={handleChange}
           />
-        </label>
-        <label>
-          Enter image url:
           <input
             type="text"
             name="picURL"
+            placeholder="Enter image url"
             value={input.picURL || ""}
             onChange={handleChange}
           />
-        </label>
-        <label>
-          Missing since date:
           <input
             type="date"
             name="missingSince"
+            placeholder="Missing since date"
             value={input.missingSince || ""}
             onChange={handleChange}
           />
-        </label>
-        <label>
-          Area missing from:
           <input
             type="text"
             name="missingFrom"
+            placeholder="Area missing from"
             value={input.missingFrom || ""}
             onChange={handleChange}
           />
-        </label>
         <input type="Submit" />
       </form>
     </>
