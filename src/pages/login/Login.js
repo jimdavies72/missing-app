@@ -56,10 +56,10 @@ const Login = ({ user, setUser }) => {
   };
 
   return (
-    <div className="login-form">
+    <div className="form-container">
       {user && <Navigate to="/home" />}
       {bool ? <h3>Please Login</h3> : <h3>Please Sign Up</h3>}
-      <form onSubmit={submitHandler}>
+      <form className="login-form" onSubmit={submitHandler}>
         <div className="login-inputs">
           <input
             value={username && username.toLowerCase()}
@@ -85,32 +85,32 @@ const Login = ({ user, setUser }) => {
               type={passwordShown ? "text" : "password"}
             />
             {passwordShown ? (
-              <i
+              <span><i
                 onClick={() => setPasswordShown(!passwordShown)}
                 className="fas fa-eye-slash"
-              ></i>
+              ></i></span>
             ) : (
-              <i
+              <span><i
                 onClick={() => setPasswordShown(!passwordShown)}
                 className="fas fa-eye"
-              ></i>
+              ></i></span>
             )}
           </div>
           {bool ? (
-            <button className="form-submit" type="submit">
+            <button className="button-main" type="submit">
               Login
             </button>
           ) : (
-            <button className="form-submit" type="submit">
+            <button className="button-main" type="submit">
               Sign Up
             </button>
           )}
         </div>
       </form>
       {bool ? (
-        <button onClick={() => setBool(!bool)}>Need to sign up?</button>
+        <button className="button-alt" onClick={() => setBool(!bool)}>Need to sign up?</button>
       ) : (
-        <button onClick={() => setBool(!bool)}>Need to log in?</button>
+        <button  className="button-alt" onClick={() => setBool(!bool)}>Need to log in?</button>
       )}
       <h3 className="action-success">{actionSuccess}</h3>
     </div>
