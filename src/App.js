@@ -24,7 +24,10 @@ const App = () => {
       <main className="container">
         <Routes>
           <Route path="/" element={<Login user={user} setUser={setUser} />} />
-          <Route path="/home" element={<Home setUser={setUser} />} />
+          <Route
+            path="/home"
+            element={<Home setUser={setUser} user={user} />}
+          />
           <Route
             path="/register"
             element={<CreateMissing user={user} isCreate={isCreate} />}
