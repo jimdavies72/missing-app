@@ -4,7 +4,7 @@ import SearchBar from "../../components/searchBar/SearchBar.js";
 import "./Home.css";
 import { useState } from "react";
 
-const Home = () => {
+const Home = (user) => {
   // Dummy missing person data until the fetch request is implemented
   const [missingPersons, setMissingPersons] = useState([
     {
