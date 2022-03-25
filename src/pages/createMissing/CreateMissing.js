@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link, useNavigate } from "react-router-dom";
 import { createMissingPerson } from "../../utils";
 import "./CreateMissing.css";
 
@@ -13,10 +13,15 @@ const CreateMissing = ({ user, missingPerson, setMissingPerson }) => {
   const [missingSince, setMissingSince] = useState();
   const [missingFrom, setMissingFrom] = useState();
   
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("working")
     createMissingPerson(name, userId, ageAtDisappearance, picUrl, missingSince, missingFrom, setMissingPerson);
+    setTimeout(() => {
+      navigate("/home")
+    }, 100)
   };
 
   return (
@@ -59,7 +64,7 @@ const CreateMissing = ({ user, missingPerson, setMissingPerson }) => {
             value={missingFrom}
             onChange={(e) => setMissingFrom(e.target.value)}
           />
-        <button className="button-main" type="Submit">Submit</button>
+        <button className="button-main" type="submit">Submit</button>
       </form>
     </>
   );

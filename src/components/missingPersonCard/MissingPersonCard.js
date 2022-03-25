@@ -9,7 +9,7 @@ const MissingPersonCard = ({ person, user, personFoundHandler }) => {
     if(user === person.userId) {
       setIsUser(true);
     }
-  }, []);
+  }, [isUser]);
 
   return (
     <div className="person-card">
@@ -18,7 +18,7 @@ const MissingPersonCard = ({ person, user, personFoundHandler }) => {
       <p>Age: {person.age}</p>
       <p>{person.missingSince}</p>
       <p>{person.missingFrom}</p>
-      { isUser && <button onClick={() => personFoundHandler(person._id)} className="button-alt">Mark as found</button>}
+      { isUser ? <button onClick={() => personFoundHandler(person._id)} className="button-alt">Mark as found</button> : null}
     </div>
   );
 };
