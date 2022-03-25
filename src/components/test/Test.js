@@ -11,7 +11,6 @@ export const Test = () => {
 
     const data = await fetchRequest(`test`, null, "GET");
 
-    console.log(data);
     if (data.test) {
       setTestMsg(data.test.testString);
     }

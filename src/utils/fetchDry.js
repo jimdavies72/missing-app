@@ -9,7 +9,6 @@ export const fetchRequest = async (endpoint, payload, httpVerb) => {
       }
     );
 
-    console.log(response);
     const data = await response.json();
 
     if (data) {
