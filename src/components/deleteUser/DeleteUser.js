@@ -29,6 +29,7 @@ const DeleteUser = ({ user, clearUserHandler }) => {
         <h3>DELETE USER - Cannot be undone!</h3>
         <div className="profile-inputs">
           <input
+            className="input-profile"
             placeholder="username"
             type="text"
             name="username"
@@ -36,7 +37,7 @@ const DeleteUser = ({ user, clearUserHandler }) => {
             value={username && username.toLowerCase()}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <button className="form-submit" type="submit">
+          <button className="button-main" type="submit">
             Delete User
           </button>
         </div>
