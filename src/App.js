@@ -20,7 +20,7 @@ const App = () => {
   return (
     <div className="app-container">
       <header>
-        <Navbar user={user} />
+        <Navbar user={user} clearUserHandler={clearUserHandler} />
       </header>
       <main className="container">
         <Routes>
@@ -31,7 +31,14 @@ const App = () => {
           />
           <Route
             path="/register"
-            element={<CreateMissing user={user} isCreate={isCreate} setMissingPerson={setMissingPerson} missingPerson={missingPerson} />}
+            element={
+              <CreateMissing
+                user={user}
+                isCreate={isCreate}
+                setMissingPerson={setMissingPerson}
+                missingPerson={missingPerson}
+              />
+            }
           />
         </Routes>
       </main>

@@ -8,10 +8,8 @@ const MissingPersonList = ({ user, filterOrigin }) => {
   // const [missingPersons, setMissingPersons] = useState();
   const [mps, setMps] = useState([]);
 
-  console.log("filterOrigin", filterOrigin);
   const getMps = async () => {
     let payload;
-
     let endpoint;
 
     if (filterOrigin && filterOrigin.origin === "searchBar") {
