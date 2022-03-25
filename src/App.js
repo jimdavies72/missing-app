@@ -6,6 +6,7 @@ import Navbar from "./components/navbar/Navbar.js";
 import Home from "./pages/home/Home.js";
 import CreateMissing from "./pages/createMissing/CreateMissing.js";
 import Footer from "./components/footer/Footer.js";
+import Profile from "./pages/profile/Profile.js";
 
 const App = () => {
   const [user, setUser] = useState();
@@ -37,6 +38,16 @@ const App = () => {
                 isCreate={isCreate}
                 setMissingPerson={setMissingPerson}
                 missingPerson={missingPerson}
+              />
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <Profile
+                user={user}
+                setUser={setUser}
+                clearUserHandler={clearUserHandler}
               />
             }
           />
