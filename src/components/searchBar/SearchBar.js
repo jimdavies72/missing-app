@@ -1,12 +1,25 @@
 import "./SearchBar.css";
+import { useState } from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ filterOrigin, setFilterOrigin }) => {
+  const [searchText, setSearchText] = useState();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setFilterOrigin({ origin: "searchBar", value: searchText });
+  };
+
   return (
     <>
-    <form> 
-    <input type="text" placeholder="Search Names..."></input>
-    <button>Search</button>
-</form>
+      <form onSubmit={submitHandler}>
+        <input
+          type="text"
+          placeholder="Search Names..."
+          value={searchText}
+          onChange={(event) => setSearchText(event.target.value)}
+        ></input>
+        {searchText ? <button type="submit">Search</button> : null}
+      </form>
     </>
   );
 };
