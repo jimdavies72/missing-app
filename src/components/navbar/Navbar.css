@@ -1,0 +1,47 @@
+li, a, button {
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    /* pushing left and right items to far edges = justify-content: flex-end;  */
+    justify-content: flex-end; 
+    align-items: center;
+    padding: 5px 0px;
+    position: sticky;
+    overflow: hidden;
+}
+
+#logo {
+    cursor: pointer;
+    margin-right: auto;
+    height: 60px;
+    width: 90px;
+}
+
+.nav_links {
+    list-style: none;
+}
+/* aligns side by side rather than up and down  */
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+    color: black;
+}
+
+.nav_links li a:hover {
+    color: #1B98E0  
+}
+
+/* 
+button:hover {
+    background-color: rgba(0,136,169,0.8);
+} */
+
+

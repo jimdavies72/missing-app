@@ -9,7 +9,6 @@ export const fetchRequest = async (endpoint, payload, httpVerb) => {
       }
     );
 
-    console.log(response);
     const data = await response.json();
 
     if (data) {
@@ -30,7 +29,7 @@ export const tokenizedFetch = async (endpoint, payload, httpVerb) => {
         method: httpVerb,
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("m34Token")}`,
+          Authorization: `Bearer ${localStorage.getItem("myToken")}`,
         },
         body: payload ? JSON.stringify(payload) : null,
       }

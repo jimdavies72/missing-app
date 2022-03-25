@@ -1,22 +1,61 @@
-import "./App.css";
+import "./index.css";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
-import { Test } from "./components/test/Test";
+import Login from "./pages/login/Login.js";
+import Navbar from "./components/navbar/Navbar.js";
+import Home from "./pages/home/Home.js";
+import CreateMissing from "./pages/createMissing/CreateMissing.js";
+import Footer from "./components/footer/Footer.js";
+import Profile from "./pages/profile/Profile.js";
 
 const App = () => {
   const [user, setUser] = useState();
+  const [isCreate, setIsCreate] = useState(true);
+  const [missingPerson, setMissingPerson] = useState();
 
   const clearUserHandler = () => {
     setUser(null);
-    localStorage.removeItem(process.env.REACT_APP_LSTOKEN);
+    localStorage.removeItem("myToken");
   };
 
   return (
     <div className="app-container">
-      <Routes>
-        <Route path="/" element={<Test />} />
-      </Routes>
+      <header>
+        <Navbar user={user} clearUserHandler={clearUserHandler} />
+      </header>
+      <main className="container">
+        <Routes>
+          <Route path="/" element={<Login user={user} setUser={setUser} />} />
+          <Route
+            path="/home"
+            element={<Home setUser={setUser} user={user} />}
+          />
+          <Route
+            path="/register"
+            element={
+              <CreateMissing
+                user={user}
+                isCreate={isCreate}
+                setMissingPerson={setMissingPerson}
+                missingPerson={missingPerson}
+              />
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <Profile
+                user={user}
+                setUser={setUser}
+                clearUserHandler={clearUserHandler}
+              />
+            }
+          />
+        </Routes>
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };
