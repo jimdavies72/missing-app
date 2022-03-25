@@ -25,17 +25,19 @@ const UpdateProfile = ({ user }) => {
 
   return (
     <div className="profile-form">
+      <h3>Update Email</h3>
       <form onSubmit={handleSubmit} className="form">
         <div className="profile-inputs">
           <input
+            className="input-profile"
             placeholder="update email"
             type="email"
             name="email"
             value={email && email.toLowerCase()}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button className="form-submit" type="submit">
-            Update Profile
+          <button className="button-main" type="submit">
+            Update Email
           </button>
         </div>
       </form>

@@ -31,6 +31,7 @@ const UpdatePassword = ({ user }) => {
         <div className="profile-inputs">
           <div className="password">
             <input
+              className="input-profile"
               placeholder="new password"
               name="newPassword"
               value={newPassword}
@@ -50,7 +51,7 @@ const UpdatePassword = ({ user }) => {
               ></i>
             )}
           </div>
-          <button className="form-submit" type="submit">
+          <button className="button-main" type="submit">
             Update Password
           </button>
         </div>
