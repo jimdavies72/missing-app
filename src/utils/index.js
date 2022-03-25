@@ -56,7 +56,14 @@ export const tokenLogin = async (setUser) => {
 };
 
 //create missing person
-export const createMissingPerson = async (name, userId, publicVisible, picURL, missingSince, missingFrom, ageAtDisappearance, setMissingPerson) => {
+export const createMissingPerson = async (
+  name,
+  userId,
+  picURL,
+  missingSince,
+  missingFrom,
+  ageAtDisappearance
+) => {
   try {
     const response = await fetch(`${process.env.REACT_APP_REST_API}missing`, {
       method: "POST",
@@ -72,6 +79,7 @@ export const createMissingPerson = async (name, userId, publicVisible, picURL, m
       }),
     });
     const data = await response.json();
+
     // setMissingPerson(data);
   } catch (error) {
     console.log(error);
@@ -79,20 +87,27 @@ export const createMissingPerson = async (name, userId, publicVisible, picURL, m
 };
 
 // List all missing people
-export const listMissingPeople = async (filterKey, filterVal, setMissingPersons) => {
+export const listMissingPeople = async (
+  filterKey,
+  filterVal,
+  setMissingPersons
+) => {
   try {
-    const response = await fetch(`${process.env.REACT_APP_REST_API}missing/filtered`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        filterKey: filterKey,
-        filterVal: filterVal,
-      }),
-    });
+    const response = await fetch(
+      `${process.env.REACT_APP_REST_API}missing/filtered`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          filterKey: filterKey,
+          filterVal: filterVal,
+        }),
+      }
+    );
 
     const data = await response.json();
     setMissingPersons(data);
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 };
