@@ -66,6 +66,9 @@ const MissingPersonList = ({ user, filterOrigin }) => {
       updateVal: false,
     };
     const data = await fetchRequest("missing", payload, "PATCH");
+    // let temp = [...mps];
+    // temp = temp.filter((obj) => obj._id !== id);
+    // setMps([...temp]);
   };
 
   return (
