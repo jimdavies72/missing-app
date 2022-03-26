@@ -7,6 +7,7 @@ const SearchBar = ({ filterOrigin, setFilterOrigin }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     setFilterOrigin({ origin: "searchBar", value: searchText });
+    setSearchText("");
   };
 
   return (

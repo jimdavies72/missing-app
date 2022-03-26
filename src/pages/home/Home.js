@@ -47,7 +47,6 @@ const Home = ({ user }) => {
             <button className="button-main">Register Missing Person</button>
           </Link>
         </section>
-        <h1>All Missing People</h1>
         <MissingPersonList user={user} filterOrigin={filterOrigin} />
       </section>
     </>
