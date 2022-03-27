@@ -1,7 +1,15 @@
 import "./MissingPersonCard.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const MissingPersonCard = ({ person, user, personFoundHandler }) => {
+import noPicImage from "../../media/nopic-placeholder.png";
+
+const MissingPersonCard = ({
+  person,
+  user,
+  personFoundHandler,
+  updatePersonHandler,
+}) => {
   const [picUrl, setPicUrl] = useState();
   const [msDate, setMsDate] = useState();
 
@@ -9,20 +17,25 @@ const MissingPersonCard = ({ person, user, personFoundHandler }) => {
     let cardImage;
     try {
       if (person.picURL) {
-        if (person.picURL.slice(0, 4) === "http") {
-          // picURL is a web link
-          cardImage = person.picURL;
-        } else {
-          // picURL is a local image
-          cardImage = require(`../../media/people/${person.picURL}`);
-        }
+        setPicUrl(person.picURL);
       } else {
-        cardImage = require("../../media/nopic-placeholder.png");
+        setPicUrl(noPicImage);
       }
-      setPicUrl(cardImage);
+
+      // if (person.picURL) {
+      //   if (person.picURL.slice(0, 4) === "http") {
+      //     // picURL is a web link
+      //     cardImage = person.picURL;
+      //   } else {
+      //     // picURL is a local image
+      //     cardImage = require(`../../media/people/${person.picURL}`);
+      //   }
+      // } else {
+      //   setPicUrl(noPicImage);
+      // }
+      // setPicUrl(cardImage);
     } catch (error) {
-      cardImage = require("../../media/nopic-placeholder.png");
-      setPicUrl(cardImage);
+      setPicUrl(noPicImage);
     }
   };
 
@@ -35,7 +48,7 @@ const MissingPersonCard = ({ person, user, personFoundHandler }) => {
         year: "numeric",
       })
     );
-  });
+  }, []);
 
   return (
     <div className="person-card">
@@ -52,11 +65,18 @@ const MissingPersonCard = ({ person, user, personFoundHandler }) => {
                 onClick={() => personFoundHandler(person._id)}
                 className="fa-solid fa-person-circle-plus"
               ></i>
-              <i className="fa-solid fa-file-pen"></i>
             </span>
           ) : (
             <p>Person Found</p>
           )
+        ) : null}
+        {user === person.userId ? (
+          <Link to="/register">
+            <i
+              onClick={() => updatePersonHandler(person, false)}
+              className="fa-solid fa-file-pen"
+            ></i>
+          </Link>
         ) : null}
         <i className="fa-solid fa-mountain-sun"></i>
       </div>

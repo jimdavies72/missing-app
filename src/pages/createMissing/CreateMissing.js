@@ -1,14 +1,12 @@
-import React from "react";
-import { useState } from "react";
-import { Navigate, Link, useNavigate } from "react-router-dom";
-import { fetchRequest } from "../../utils/fetchDry";
-import { createMissingPerson } from "../../utils";
 import "./CreateMissing.css";
+import React from "react";
+import { useState, useEffect } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
+import { fetchRequest } from "../../utils/fetchDry";
 
-const CreateMissing = ({ user, missingPerson, setMissingPerson }) => {
+const CreateMissing = ({ user, missingPerson, isCreate }) => {
   const [name, setName] = useState();
   const [ageAtDisappearance, setAgeAtDisappearance] = useState();
-  //const [userId, setUserId] = useState(user);
   const [publicVisible, setPublicVisible] = useState(true);
   const [picUrl, setPicUrl] = useState();
   const [missingSince, setMissingSince] = useState();
@@ -16,28 +14,49 @@ const CreateMissing = ({ user, missingPerson, setMissingPerson }) => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!isCreate) {
+      // Its an update so populate fields with existing data
+      setName(missingPerson.name);
+      setAgeAtDisappearance(missingPerson.ageAtDisappearance);
+      setPicUrl(missingPerson.picURL);
+      setMissingSince(missingPerson.missingSince);
+      setMissingFrom(missingPerson.missingFrom);
+    }
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // createMissingPerson(
-    //   name,
-    //   userId,
-    //   ageAtDisappearance,
-    //   picUrl,
-    //   missingSince,
-    //   missingFrom,
-    //   setMissingPerson
-    // );
-
-    const payload = {
-      name: name,
-      userId: user,
-      picURL: picUrl,
-      missingSince: missingSince,
-      missingFrom: missingFrom,
-      ageAtDisappearance: ageAtDisappearance,
-    };
-    const data = await fetchRequest("missing", payload, "POST");
+    let httpVerb;
+    let payload;
+    if (isCreate) {
+      // Its a create record
+      httpVerb = "POST";
+      payload = {
+        name: name,
+        userId: user,
+        picURL: picUrl,
+        missingSince: missingSince,
+        missingFrom: missingFrom,
+        ageAtDisappearance: ageAtDisappearance,
+      };
+    } else {
+      //Its an update record
+      httpVerb = "PUT";
+      payload = {
+        id: missingPerson._id,
+        data: {
+          name: name,
+          userId: user,
+          picURL: picUrl,
+          missingSince: missingSince,
+          missingFrom: missingFrom,
+          ageAtDisappearance: ageAtDisappearance,
+        },
+      };
+    }
+    const data = await fetchRequest("missing", payload, httpVerb);
 
     setTimeout(() => {
       navigate("/home");

@@ -18,6 +18,18 @@ const App = () => {
     localStorage.removeItem("myToken");
   };
 
+  const updatePersonHandler = (person, isCreate) => {
+    if (!isCreate) {
+      setIsCreate(false);
+      setMissingPerson(person);
+    }
+  };
+
+  const createPersonHandler = () => {
+    setIsCreate(true);
+    setMissingPerson(null);
+  };
+
   return (
     <div className="app-container">
       <header>
@@ -28,7 +40,14 @@ const App = () => {
           <Route path="/" element={<Login user={user} setUser={setUser} />} />
           <Route
             path="/home"
-            element={<Home setUser={setUser} user={user} />}
+            element={
+              <Home
+                setUser={setUser}
+                user={user}
+                updatePersonHandler={updatePersonHandler}
+                createPersonHandler={createPersonHandler}
+              />
+            }
           />
           <Route
             path="/register"
@@ -38,6 +57,7 @@ const App = () => {
                 isCreate={isCreate}
                 setMissingPerson={setMissingPerson}
                 missingPerson={missingPerson}
+                updatePersonHandler={updatePersonHandler}
               />
             }
           />

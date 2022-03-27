@@ -4,7 +4,7 @@ import { fetchRequest } from "../../utils/fetchDry";
 import MissingPersonCard from "../missingPersonCard/MissingPersonCard.js";
 // import { listMissingPeople } from "../../utils/index.js";
 
-const MissingPersonList = ({ user, filterOrigin }) => {
+const MissingPersonList = ({ user, filterOrigin, updatePersonHandler }) => {
   // const [missingPersons, setMissingPersons] = useState();
   const [mps, setMps] = useState([]);
   const [listHeader, setListHeader] = useState();
@@ -83,6 +83,7 @@ const MissingPersonList = ({ user, filterOrigin }) => {
             person={person}
             user={user}
             personFoundHandler={personFoundHandler}
+            updatePersonHandler={updatePersonHandler}
           />
         ))}
       </section>
