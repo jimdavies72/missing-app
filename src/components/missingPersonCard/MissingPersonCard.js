@@ -47,22 +47,18 @@ const MissingPersonCard = ({ person, user, personFoundHandler }) => {
       <div className="card-buttons">
         {user === person.userId ? (
           person.publicVisible ? (
-            // <button
-            //   onClick={() => personFoundHandler(person._id)}
-            //   className="button-alt"
-            // >
-            //   Mark as found
-            // </button>
             <span>
               <i
                 onClick={() => personFoundHandler(person._id)}
                 className="fa-solid fa-person-circle-plus"
               ></i>
+              <i className="fa-solid fa-file-pen"></i>
             </span>
           ) : (
             <p>Person Found</p>
           )
         ) : null}
+        <i className="fa-solid fa-mountain-sun"></i>
       </div>
     </div>
   );

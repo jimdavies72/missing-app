@@ -6,8 +6,10 @@ const SearchBar = ({ filterOrigin, setFilterOrigin }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setFilterOrigin({ origin: "searchBar", value: searchText });
-    setSearchText("");
+    if (searchText) {
+      setFilterOrigin({ origin: "searchBar", value: searchText });
+      setSearchText("");
+    }
   };
 
   return (
@@ -19,7 +21,9 @@ const SearchBar = ({ filterOrigin, setFilterOrigin }) => {
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
         ></input>
-        {searchText ? <button type="submit">Search</button> : null}
+        <button type="submit">
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </button>
       </form>
     </>
   );
