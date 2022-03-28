@@ -3,11 +3,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Navigate, useNavigate, Link } from "react-router-dom";
 import { fetchRequest } from "../../utils/fetchDry";
+import { formatDate } from "../../utils/functions";
 
 const CreateMissing = ({ user, missingPerson, isCreate }) => {
   const [name, setName] = useState();
   const [ageAtDisappearance, setAgeAtDisappearance] = useState();
-  const [publicVisible, setPublicVisible] = useState(true);
+  //const [publicVisible, setPublicVisible] = useState(true);
   const [picUrl, setPicUrl] = useState();
   const [missingSince, setMissingSince] = useState();
   const [missingFrom, setMissingFrom] = useState();
@@ -21,7 +22,7 @@ const CreateMissing = ({ user, missingPerson, isCreate }) => {
       setName(missingPerson.name);
       setAgeAtDisappearance(missingPerson.ageAtDisappearance);
       setPicUrl(missingPerson.picURL);
-      setMissingSince(missingPerson.missingSince);
+      setMissingSince(formatDate(missingPerson.missingSince));
       setMissingFrom(missingPerson.missingFrom);
       setContactDetail(missingPerson.contactDetail);
     }
@@ -78,6 +79,7 @@ const CreateMissing = ({ user, missingPerson, isCreate }) => {
           placeholder="Missing person's name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
         <input
           type="number"
@@ -99,6 +101,7 @@ const CreateMissing = ({ user, missingPerson, isCreate }) => {
           placeholder="Missing since date"
           value={missingSince}
           onChange={(e) => setMissingSince(e.target.value)}
+          required
         />
         <input
           type="text"
@@ -106,6 +109,7 @@ const CreateMissing = ({ user, missingPerson, isCreate }) => {
           placeholder="Area missing from"
           value={missingFrom}
           onChange={(e) => setMissingFrom(e.target.value)}
+          required
         />
         <input
           type="text"
@@ -116,9 +120,7 @@ const CreateMissing = ({ user, missingPerson, isCreate }) => {
         />
         <div className="button-container">
           <Link to="/home">
-            <button className="button-main" onClick="">
-              Go Back
-            </button>
+            <button className="button-main">Go Back</button>
           </Link>
           <button className="button-main" type="submit">
             Submit
