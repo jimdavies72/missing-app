@@ -1,7 +1,7 @@
 import "./CreateMissing.css";
 import React from "react";
 import { useState, useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, Link } from "react-router-dom";
 import { fetchRequest } from "../../utils/fetchDry";
 
 const CreateMissing = ({ user, missingPerson, isCreate }) => {
@@ -11,6 +11,7 @@ const CreateMissing = ({ user, missingPerson, isCreate }) => {
   const [picUrl, setPicUrl] = useState();
   const [missingSince, setMissingSince] = useState();
   const [missingFrom, setMissingFrom] = useState();
+  const [contactDetail, setContactDetail] = useState();
 
   const navigate = useNavigate();
 
@@ -22,6 +23,7 @@ const CreateMissing = ({ user, missingPerson, isCreate }) => {
       setPicUrl(missingPerson.picURL);
       setMissingSince(missingPerson.missingSince);
       setMissingFrom(missingPerson.missingFrom);
+      setContactDetail(missingPerson.contactDetail);
     }
   }, []);
 
@@ -40,6 +42,7 @@ const CreateMissing = ({ user, missingPerson, isCreate }) => {
         missingSince: missingSince,
         missingFrom: missingFrom,
         ageAtDisappearance: ageAtDisappearance,
+        contactDetail: contactDetail,
       };
     } else {
       //Its an update record
@@ -53,6 +56,7 @@ const CreateMissing = ({ user, missingPerson, isCreate }) => {
           missingSince: missingSince,
           missingFrom: missingFrom,
           ageAtDisappearance: ageAtDisappearance,
+          contactDetail: contactDetail,
         },
       };
     }
@@ -103,9 +107,23 @@ const CreateMissing = ({ user, missingPerson, isCreate }) => {
           value={missingFrom}
           onChange={(e) => setMissingFrom(e.target.value)}
         />
-        <button className="button-main" type="submit">
-          Submit
-        </button>
+        <input
+          type="text"
+          name="contactDetail"
+          placeholder="Contact details"
+          value={contactDetail}
+          onChange={(e) => setContactDetail(e.target.value)}
+        />
+        <div className="button-container">
+          <Link to="/home">
+            <button className="button-main" onClick="">
+              Go Back
+            </button>
+          </Link>
+          <button className="button-main" type="submit">
+            Submit
+          </button>
+        </div>
       </form>
     </>
   );
