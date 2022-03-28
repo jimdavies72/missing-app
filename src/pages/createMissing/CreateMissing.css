@@ -23,3 +23,9 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+.button-container {
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+}
