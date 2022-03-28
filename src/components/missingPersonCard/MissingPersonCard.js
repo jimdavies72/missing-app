@@ -48,7 +48,7 @@ const MissingPersonCard = ({
         year: "numeric",
       })
     );
-  }, []);
+  }, [person]);
 
   return (
     <div className="person-card">
@@ -60,14 +60,14 @@ const MissingPersonCard = ({
       <div className="card-buttons">
         {user === person.userId ? (
           person.publicVisible ? (
-            <span>
-              <i
-                onClick={() => personFoundHandler(person._id)}
-                className="fa-solid fa-person-circle-plus"
-              ></i>
-            </span>
+            <button
+              onClick={() => personFoundHandler(person._id)}
+              className="button-alt"
+            >
+              Mark as found
+            </button>
           ) : (
-            <p>Person Found</p>
+            <h3>Person Found</h3>
           )
         ) : null}
         {user === person.userId ? (
