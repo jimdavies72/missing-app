@@ -4,7 +4,6 @@ import logo from "../../media/logo-1.png";
 import { useState } from "react";
 
 const Navbar = ({ user, clearUserHandler }) => {
-  const [bool, setBool] = useState(false);
 
   return (
     <nav className="container">
@@ -16,18 +15,18 @@ const Navbar = ({ user, clearUserHandler }) => {
           </li>
         )}
         {user && (
-          <Link to="/home">
-            <button className="button-main" onClick="">
-              Home
-            </button>
-          </Link>
+          <li>
+            <Link to="/home">
+              <p className="listLink">Home</p>
+            </Link>
+          </li>
         )}
         {user && (
-          <Link to="/profile">
-            <button className="button-main" onClick="">
-              Profile
-            </button>
-          </Link>
+          <li>
+            <Link to="/profile">
+              <p className="listLink">Profile</p>
+            </Link>
+          </li>
         )}
         {user && (
           <button className="button-main" onClick={() => clearUserHandler()}>
