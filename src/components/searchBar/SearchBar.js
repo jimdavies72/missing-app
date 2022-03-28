@@ -16,6 +16,7 @@ const SearchBar = ({ filterOrigin, setFilterOrigin }) => {
     <>
       <form onSubmit={submitHandler}>
         <input
+          className="search-input"
           type="text"
           placeholder="Search Names..."
           value={searchText}
