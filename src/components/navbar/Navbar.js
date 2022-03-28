@@ -11,21 +11,21 @@ const Navbar = ({ user, clearUserHandler }) => {
       <ul className="nav_links">
         {user && (
           <li>
-            <p>Logged In: {user}</p>
-          </li>
-        )}
-        {user && (
-          <li>
             <Link to="/home">
               <p className="listLink">Home</p>
             </Link>
           </li>
         )}
         {user && (
-          <li>
+          <li id="pFile">
             <Link to="/profile">
               <p className="listLink">Profile</p>
             </Link>
+          </li>
+        )}
+        {user && (
+          <li id="uName">
+            <p className="userName">Logged In: {user}</p>
           </li>
         )}
         {user && (
