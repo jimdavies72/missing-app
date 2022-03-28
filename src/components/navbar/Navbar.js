@@ -15,20 +15,20 @@ const Navbar = ({ user, clearUserHandler }) => {
             <p>Logged In: {user}</p>
           </li>
         )}
-        {user &&
-          (!bool ? (
-            <Link to="/profile">
-              <button onClick={() => setBool(!bool)} className="button-main">
-                My Profile
-              </button>
-            </Link>
-          ) : (
-            <Link to="/home">
-              <button onClick={() => setBool(!bool)} className="button-main">
-                Home
-              </button>
-            </Link>
-          ))}
+        {user && (
+          <Link to="/home">
+            <button className="button-main" onClick="">
+              Home
+            </button>
+          </Link>
+        )}
+        {user && (
+          <Link to="/profile">
+            <button className="button-main" onClick="">
+              Profile
+            </button>
+          </Link>
+        )}
         {user && (
           <button className="button-main" onClick={() => clearUserHandler()}>
             Logout
