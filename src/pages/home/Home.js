@@ -22,12 +22,15 @@ const Home = ({ user, updatePersonHandler, createPersonHandler }) => {
   return (
     <>
       {!user && <Navigate to="/" />}
-      <section className="HomeContainer">
-        <section className="SearchContainer">
-          <SearchBar
-            filterOrigin={filterOrigin}
-            setFilterOrigin={setFilterOrigin}
-          />
+      <section>
+        <section className="search-container">
+          <div>
+            <SearchBar
+              filterOrigin={filterOrigin}
+              setFilterOrigin={setFilterOrigin}
+            />
+          </div>
+          <div>
           {bool ? (
             <button
               onClick={() => filterOriginHandler()}
@@ -51,6 +54,7 @@ const Home = ({ user, updatePersonHandler, createPersonHandler }) => {
               Register Missing Person
             </button>
           </Link>
+          </div>
         </section>
         <MissingPersonList
           user={user}

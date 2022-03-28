@@ -70,7 +70,8 @@ input,
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 55px;
+  height: 100%;
+  margin-top: 100px;
 }
 
 .hero-container {
@@ -118,8 +119,15 @@ input,
   color: black;
 }
 
+.form-container .password {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 .fas {
-  padding-bottom: 4px;
+  margin-left: 8px;
+  margin-top: 10px;
   color: #1b98e0;
 }
 

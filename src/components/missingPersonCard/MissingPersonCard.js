@@ -54,9 +54,10 @@ const MissingPersonCard = ({
     <div className="person-card">
       <img src={picUrl} alt={"missing person"} height={200} width={200}></img>
       <h3>{person.name}</h3>
-      <p>Age at disappearance: {person.ageAtDisappearance}</p>
-      <p>Missing since: {msDate}</p>
-      <p>Missing from: {person.missingFrom}</p>
+      <p><strong>Age at disappearance:</strong> {person.ageAtDisappearance}</p>
+      <p><strong>Missing since:</strong> {msDate}</p>
+      <p><strong>Missing from:</strong> {person.missingFrom}</p>
+      <p><strong>Contact details:</strong> {person.contactDetail}</p>
       <div className="card-buttons">
         {user === person.userId ? (
           person.publicVisible ? (
@@ -78,7 +79,6 @@ const MissingPersonCard = ({
             ></i>
           </Link>
         ) : null}
-        <i className="fa-solid fa-mountain-sun"></i>
       </div>
     </div>
   );
