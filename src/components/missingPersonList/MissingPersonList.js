@@ -1,12 +1,13 @@
 import "./MissingPersonList.css";
-import MissingPersonCard from "../missingPersonCard/MissingPersonCard.js";
 import { useState, useEffect } from "react";
-// import { listMissingPeople } from "../../utils/index.js";
 import { fetchRequest } from "../../utils/fetchDry";
+import MissingPersonCard from "../missingPersonCard/MissingPersonCard.js";
+// import { listMissingPeople } from "../../utils/index.js";
 
-const MissingPersonList = ({ user, filterOrigin }) => {
+const MissingPersonList = ({ user, filterOrigin, updatePersonHandler }) => {
   // const [missingPersons, setMissingPersons] = useState();
   const [mps, setMps] = useState([]);
+  const [listHeader, setListHeader] = useState();
 
   const getMps = async () => {
     let payload;
@@ -14,6 +15,7 @@ const MissingPersonList = ({ user, filterOrigin }) => {
 
     if (filterOrigin && filterOrigin.origin === "searchBar") {
       // Search bar
+      setListHeader("Search Results...");
       endpoint = "missing/search";
       payload = {
         filterKey: "name",
@@ -22,6 +24,7 @@ const MissingPersonList = ({ user, filterOrigin }) => {
     } else if (filterOrigin && filterOrigin.origin === "myMP") {
       if (filterOrigin.value === "my") {
         // My missing persons
+        setListHeader("My Missing Persons");
         endpoint = "missing/filtered";
         payload = {
           filterKey: "userId",
@@ -29,6 +32,7 @@ const MissingPersonList = ({ user, filterOrigin }) => {
         };
       } else {
         // All public visible missing persons
+        setListHeader("All Missing People");
         endpoint = "missing/filtered";
         payload = {
           filterKey: "publicVisible",
@@ -37,6 +41,7 @@ const MissingPersonList = ({ user, filterOrigin }) => {
       }
     } else {
       // All public visible missing persons
+      setListHeader("All Missing People");
       endpoint = "missing/filtered";
       payload = {
         filterKey: "publicVisible",
@@ -56,7 +61,7 @@ const MissingPersonList = ({ user, filterOrigin }) => {
     //   setMps(missingPersons.mps);
     // }
     getMps();
-  }, [filterOrigin]);
+  }, [filterOrigin, mps]);
 
   const personFoundHandler = async (id) => {
     const payload = {
@@ -66,13 +71,11 @@ const MissingPersonList = ({ user, filterOrigin }) => {
       updateVal: false,
     };
     const data = await fetchRequest("missing", payload, "PATCH");
-    // let temp = [...mps];
-    // temp = temp.filter((obj) => obj._id !== id);
-    // setMps([...temp]);
   };
 
   return (
     <div>
+      <h1>{listHeader}</h1>
       <section className="person-list">
         {mps.map((person, index) => (
           <MissingPersonCard
@@ -80,6 +83,7 @@ const MissingPersonList = ({ user, filterOrigin }) => {
             person={person}
             user={user}
             personFoundHandler={personFoundHandler}
+            updatePersonHandler={updatePersonHandler}
           />
         ))}
       </section>

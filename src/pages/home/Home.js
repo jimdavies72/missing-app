@@ -6,7 +6,7 @@ import MissingPersonList from "../../components/missingPersonList/MissingPersonL
 import SearchBar from "../../components/searchBar/SearchBar.js";
 import "./Home.css";
 
-const Home = ({ user }) => {
+const Home = ({ user, updatePersonHandler, createPersonHandler }) => {
   const [filterOrigin, setFilterOrigin] = useState({});
   const [bool, setBool] = useState(true);
 
@@ -44,11 +44,19 @@ const Home = ({ user }) => {
             </button>
           )}
           <Link to="/register">
-            <button className="button-main">Register Missing Person</button>
+            <button
+              onClick={() => createPersonHandler(true)}
+              className="button-main"
+            >
+              Register Missing Person
+            </button>
           </Link>
         </section>
-        <h1>All Missing People</h1>
-        <MissingPersonList user={user} filterOrigin={filterOrigin} />
+        <MissingPersonList
+          user={user}
+          filterOrigin={filterOrigin}
+          updatePersonHandler={updatePersonHandler}
+        />
       </section>
     </>
   );
