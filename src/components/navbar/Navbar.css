@@ -45,3 +45,19 @@ button:hover {
 } */
 
 
+.listLink{
+    font-size: 16px;
+}
+
+.userName{
+    color: #1b98e0;
+}
+
+#pFile{
+    border-right: 2px solid;
+}
+
+/* #uName{
+    border-left: 2px #1b98e0 solid;
+    margin-left: 1px;
+} */

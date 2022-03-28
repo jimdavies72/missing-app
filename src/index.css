@@ -24,7 +24,6 @@ html {
 
 
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,9 +32,15 @@ body {
   color: black;
 }
 
-/* main {
-  height: 90vh;
+/* .footer-container {
+  max-width: 80em;
+  margin: 0 auto;
+  width: 100%;
 } */
+
+main {
+  min-height: 85vh;
+}
 
 .container {
   max-width: 80em;
@@ -84,9 +89,9 @@ header {
 footer {
   background: #247ba0;
   color: #ffffff;
-  position: fixed;
-  bottom: 0;
-  padding: 20px 0px;
+  /* position: fixed;
+  bottom: 0; */
+  padding: 30px 0px;
   width: 100%;
 
 }

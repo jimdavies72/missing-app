@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
         <div className="aboutUs">
           <h2>About Us</h2>
-          <p>As students at CodeNation we where tasked with building a web app. We decided, as a team, to create something
+          <p>As students at CodeNation we were tasked with building a web app. We decided, as a team, to create something
             that would help people with missing loved ones.</p>
         </div>
         <div className="footerLogo">
