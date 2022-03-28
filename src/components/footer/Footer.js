@@ -4,7 +4,7 @@ import logo from "../../media/logo-1.png";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <div className="container">
       <div className="row">
         <div className="git">
           <h2>Creators</h2>

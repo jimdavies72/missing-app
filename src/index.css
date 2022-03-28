@@ -24,7 +24,6 @@ html {
 
 
 body {
-  margin-bottom: 100px;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,6 +37,16 @@ body {
   margin: 0 auto;
   width: 100%;
 } */
+
+main {
+  min-height: 80vh;
+}
+
+.container {
+  max-width: 80em;
+  margin: 0 auto;
+  width: 97%;
+}
 
 h1, h2 {
   font-weight: 800;
@@ -80,9 +89,9 @@ header {
 footer {
   background: #247ba0;
   color: #ffffff;
-  position: fixed;
-  bottom: 0;
-  padding: 10px 20px;
+  /* position: fixed;
+  bottom: 0; */
+  padding: 30px 0px;
   width: 100%;
 
 }
