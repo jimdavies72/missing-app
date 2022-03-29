@@ -27,11 +27,6 @@ const Home = ({ user, updatePersonHandler, createPersonHandler }) => {
         <div
           className="title-container"
           style={{
-            // backgroundImage: `linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.3)), url(${backgroundBannerCloudL})`,
-            // backgroundImage: `linear-gradient(90deg, rgba(36,123,160,1) 0%, rgba(27,152,224,1) 20%, rgba(255,255,255,1) 100%), url(${backgroundBannerCloudL})`,
-            // backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(${backgroundBannerCloudL})`,
-            // backgroundImage: `linear-gradient(rgba(200, 200, 255, 0.5), rgba(200, 200, 255, 0.5)), url(${backgroundBannerCloudL})`,
-            // backgroundImage: `linear-gradient(rgba(155, 155, 155, 0.5), rgba(155, 155, 155, 0.5)), url(${backgroundBannerCloudL})`,
             backgroundImage: `linear-gradient(rgba(36,123,160,0.25), rgba(36,123,160,0.25)), url(${backgroundBannerCloudL})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
