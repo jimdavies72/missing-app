@@ -71,7 +71,11 @@ const CreateMissing = ({ user, missingPerson, isCreate }) => {
   return (
     <>
       {!user && <Navigate to="/" />}
-      <h1>Register Missing Person</h1>
+      {isCreate ? (
+        <h1>Register Missing Person</h1>
+      ) : (
+        <h1>Update {name}'s details</h1>
+      )}
       <form onSubmit={handleSubmit} className="missing-person-form">
         <input
           type="text"
