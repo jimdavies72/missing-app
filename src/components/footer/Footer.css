@@ -5,7 +5,6 @@ a{
 .row{
     font-size: 8pt;
     width: 97%;
-    height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
