@@ -33,7 +33,7 @@ const Home = ({ user, updatePersonHandler, createPersonHandler }) => {
             borderRadius: "0.375rem",
           }}
         >
-          <h1>Independent Concern Query</h1>
+          <h1>Individual Concern Query</h1>
         </div>
         <section className="search-container">
           <div>
