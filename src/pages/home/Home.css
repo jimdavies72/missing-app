@@ -17,3 +17,18 @@
 .search-container div:last-of-type > * {
   margin-left: 10px;
 }
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 30px;
+  height: 150px;
+  color: aliceblue;
+}
+
+.home-container {
+  padding-top: 20px;
+}
+

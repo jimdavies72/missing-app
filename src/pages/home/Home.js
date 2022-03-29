@@ -4,6 +4,7 @@ import { useState } from "react";
 // import { listMissingPeople } from "../../utils/index.js";
 import MissingPersonList from "../../components/missingPersonList/MissingPersonList.js";
 import SearchBar from "../../components/searchBar/SearchBar.js";
+import backgroundBannerCloudL from "../../media/backgroundBannerCloudL.png";
 import "./Home.css";
 
 const Home = ({ user, updatePersonHandler, createPersonHandler }) => {
@@ -22,7 +23,18 @@ const Home = ({ user, updatePersonHandler, createPersonHandler }) => {
   return (
     <>
       {!user && <Navigate to="/" />}
-      <section>
+      <section className="home-container">
+        <div
+          className="title-container"
+          style={{
+            backgroundImage: `linear-gradient(rgba(36,123,160,0.25), rgba(36,123,160,0.25)), url(${backgroundBannerCloudL})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            borderRadius: "0.375rem",
+          }}
+        >
+          <h1>Independent Concern Query</h1>
+        </div>
         <section className="search-container">
           <div>
             <SearchBar
@@ -31,29 +43,29 @@ const Home = ({ user, updatePersonHandler, createPersonHandler }) => {
             />
           </div>
           <div>
-          {bool ? (
-            <button
-              onClick={() => filterOriginHandler()}
-              className="button-main"
-            >
-              My Missing Persons
-            </button>
-          ) : (
-            <button
-              onClick={() => filterOriginHandler()}
-              className="button-main"
-            >
-              All Missing Persons
-            </button>
-          )}
-          <Link to="/register">
-            <button
-              onClick={() => createPersonHandler(true)}
-              className="button-main"
-            >
-              Register Missing Person
-            </button>
-          </Link>
+            {bool ? (
+              <button
+                onClick={() => filterOriginHandler()}
+                className="button-main"
+              >
+                My Missing Persons
+              </button>
+            ) : (
+              <button
+                onClick={() => filterOriginHandler()}
+                className="button-main"
+              >
+                All Missing Persons
+              </button>
+            )}
+            <Link to="/register">
+              <button
+                onClick={() => createPersonHandler(true)}
+                className="button-main"
+              >
+                Register Missing Person
+              </button>
+            </Link>
           </div>
         </section>
         <MissingPersonList
