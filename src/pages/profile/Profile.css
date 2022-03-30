@@ -167,6 +167,10 @@ input {
   margin-bottom: 20px;
 }
 
+.profile-inputs .password {
+  display: flex;
+}
+
 input {
   width: 100%;
   border: none;
