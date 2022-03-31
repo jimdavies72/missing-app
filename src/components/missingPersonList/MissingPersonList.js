@@ -32,7 +32,7 @@ const MissingPersonList = ({ user, filterOrigin, updatePersonHandler }) => {
         };
       } else {
         // All public visible missing persons
-        setListHeader("All Missing People");
+        setListHeader("All Missing Persons");
         endpoint = "missing/filtered";
         payload = {
           filterKey: "publicVisible",
@@ -41,7 +41,7 @@ const MissingPersonList = ({ user, filterOrigin, updatePersonHandler }) => {
       }
     } else {
       // All public visible missing persons
-      setListHeader("All Missing People");
+      setListHeader("All Missing Persons");
       endpoint = "missing/filtered";
       payload = {
         filterKey: "publicVisible",
