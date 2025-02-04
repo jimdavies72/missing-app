@@ -1,16 +1,15 @@
-# missing-app
+# Repo: missing-app
+![Static Badge](https://img.shields.io/badge/Dev_status-Complete-blue) [![Netlify Status](https://api.netlify.com/api/v1/badges/17cca137-f652-4885-a62b-2a7716d4b14b/deploy-status)](https://app.netlify.com/sites/icq-missing/deploys)
 
-**The front end repo for the website:**
+## **Course Final Team Project: Design and build a full stack application**
 
-## ICQ - Missing Persons
+### Description
+This repo represents the front-end code that formed part of the CodeNation Bootcamp Final Team Project. The back-end can be found in the repo: [missing-restapi](https://github.com/jimdavies72/missing-restapi)
 
-https://icq-missing.netlify.app/
+**View the end product here: [ICQ Missing Persons](https://icq-missing.netlify.app/)**
 
+### Tech Stack (Front End only):
 
-### The project was written in React.JS
-
-### This project contains the following packages:
-
-**react-router-dom**
-
-After cloning, run npm install. You will also need to clone the missing-restapi repo and have an active mongodb account to spin up.
+- React.JS web library
+- React Router Dom (react routing package)
+- Netlify Hosting
