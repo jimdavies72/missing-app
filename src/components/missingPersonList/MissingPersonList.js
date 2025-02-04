@@ -2,10 +2,8 @@ import "./MissingPersonList.css";
 import { useState, useEffect } from "react";
 import { fetchRequest } from "../../utils/fetchDry";
 import MissingPersonCard from "../missingPersonCard/MissingPersonCard.js";
-// import { listMissingPeople } from "../../utils/index.js";
 
 const MissingPersonList = ({ user, filterOrigin, updatePersonHandler }) => {
-  // const [missingPersons, setMissingPersons] = useState();
   const [mps, setMps] = useState([]);
   const [listHeader, setListHeader] = useState();
 
@@ -55,13 +53,8 @@ const MissingPersonList = ({ user, filterOrigin, updatePersonHandler }) => {
   };
 
   useEffect(() => {
-    // listMissingPeople("publicVisible", true, setMissingPersons);
-
-    // if(missingPersons) {
-    //   setMps(missingPersons.mps);
-    // }
     getMps();
-  }, [filterOrigin, mps]);
+  }, [filterOrigin]);
 
   const personFoundHandler = async (id) => {
     const payload = {

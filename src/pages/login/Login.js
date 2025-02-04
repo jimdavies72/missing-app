@@ -18,9 +18,8 @@ const Login = ({ user, setUser }) => {
   };
 
   useEffect(() => {
-    if (localStorage.key("myToken")) {
+    if (localStorage.getItem("myToken") !== null) {
       tokenFetch();
-      //tokenLogin(setUser);
     }
   }, [setUser]);
 
